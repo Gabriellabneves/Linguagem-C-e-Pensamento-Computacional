@@ -1,0 +1,17 @@
+//Horas trabalhadas 
+
+#include <stdio.h>
+
+int main()
+{
+    float horasTrabalhadas, salario;
+    printf("Sistema de Cálculo de Salário\n");
+    printf("Informe a quantidade de horas trabalhadas: ");
+    scanf("%f",&horasTrabalhadas);
+    
+    salario = horasTrabalhadas * 10.25;
+    
+    printf("O seu salário é R$ %.2f",salario);
+
+    return 0;
+}
