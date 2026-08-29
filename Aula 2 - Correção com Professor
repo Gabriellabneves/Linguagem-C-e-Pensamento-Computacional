@@ -1,0 +1,116 @@
+//PESO IDEAL 
+#include <stdio.h>
+
+int main()
+{
+    //DeclaraÃ§Ã£o de variÃ¡veis
+    float altura, pesoIdeal;
+    char sexo;
+    //Entrada de dados 
+    printf("Sistema de CÃ¡lculo de Peso Ideal \n");
+    printf("Informe a sua altura: ");
+    scanf("%f",&altura);
+    printf("Informe o sexo (M ou F): ");
+    scanf(" %c",&sexo);
+    
+    //cÃ¡lculo do peso Ideal
+    if ((sexo =='M') || (sexo =='m'))
+       {
+            pesoIdeal = (72.7 * altura) - 58;
+            printf("O peso ideal Ã© %.2f",pesoIdeal); 
+           
+       }
+    else if  ((sexo =='F') || (sexo =='f'))
+       {    pesoIdeal = (62.1 * altura) - 44.7;
+            printf("O peso ideal Ã© %.2f",pesoIdeal);
+       }
+    else printf("GÃªnero desconhecido!!!");
+    return 0;
+}
+
+
+
+//SALARIO
+
+// ExercÃ­cio do SalÃ¡rio
+#include <stdio.h>
+
+int main()
+{
+    //DeclaraÃ§Ã£o de variÃ¡vel 
+    float salario, prestacao; 
+    // Entrada do salÃ¡rio 
+    printf("Informe o seu salÃ¡rio: ");
+    scanf("%f",&salario);
+    printf("Informe o valor da parcela: ");
+    scanf("%f",&prestacao);
+    //Processamento
+    float limiteParcela = salario * 0.20;
+    if (prestacao>limiteParcela)
+       printf("EmprÃ©stimo nÃ£o autorizado!!!");
+       else printf("EmprÃ©stimo autorizado!!!");
+    return 0;
+
+
+
+//HORAS TRABALHADAS
+
+
+int main()
+{
+    float media, cargaHoraria, faltas, percentualFaltas;
+    printf("Sistema Acadêmico\n");
+    
+    printf("Informe a média do aluno: ");
+    scanf("%f",&media);
+    
+    printf("Informe a carga horária (número de aulas): ");
+    scanf("%f",&cargaHoraria);
+    
+    printf("Informe o número de faltas: ");
+    scanf("%f",&faltas);
+    
+    percentualFaltas = (faltas / cargaHoraria) * 100;
+    
+    printf ("\n --- RESULTADO --- \n");
+    printf ("Média: %.2f\n",media);
+    printf ("Percentual de faltas: %.2f\n",percentualFaltas);
+    
+    if (media >= 7.0 && percentualFaltas <= 15.0)
+       printf ("Situação: APROVADO\n");
+    else printf ("Situação: REPROVADO\n");
+    
+    return 0;
+}
+
+
+//AULAS
+
+#include <stdio.h>
+
+int main()
+{
+    float media, cargaHoraria, faltas, percentualFaltas;
+    printf("Sistema Acadêmico\n");
+    
+    printf("Informe a média do aluno: ");
+    scanf("%f",&media);
+    
+    printf("Informe a carga horária (número de aulas): ");
+    scanf("%f",&cargaHoraria);
+    
+    printf("Informe o número de faltas: ");
+    scanf("%f",&faltas);
+    
+    percentualFaltas = (faltas / cargaHoraria) * 100;
+    
+    printf ("\n --- RESULTADO --- \n");
+    printf ("Média: %.2f\n",media);
+    printf ("Percentual de faltas: %.2f\n",percentualFaltas);
+    
+    if (media >= 7.0 && percentualFaltas <= 15.0)
+       printf ("Situação: APROVADO\n");
+    else printf ("Situação: REPROVADO\n");
+    
+    return 0;
+}
