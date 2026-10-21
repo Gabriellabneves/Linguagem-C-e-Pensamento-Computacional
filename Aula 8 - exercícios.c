@@ -148,7 +148,9 @@ int main() {
 
 (Coloquei para fatorar 10!  
 
-precisei trocar a variável fatorar para 1 e não para 0 como é na soma, já que 0*1 seria 0 e assim por diante. Se mantesse o 0 o valor seria 0, já que eu fatorei de fato o resultado da 3.628.800)
+precisei trocar a variável fatorar para 1 e não para 0 como é na soma,
+já que 0*1 seria 0 e assim por diante. Se mantesse o 0 o valor seria 0,
+já que eu fatorei de fato o resultado da 3.628.800)
 
 
 
@@ -580,7 +582,8 @@ int main() {
 
 
 
-3) Escreva um programa em C que calcule a média dos números digitados pelo usuário, se eles forem ímpares. Termina a leitura se o usuário digitar zero(0).
+3) Escreva um programa em C que calcule a média dos números digitados pelo usuário,
+    se eles forem ímpares. Termina a leitura se o usuário digitar zero(0).
 
 
 
