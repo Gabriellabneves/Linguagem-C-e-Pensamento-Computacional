@@ -129,3 +129,136 @@ int main() {
 
     return 0;
 }
+
+
+
+
+Exercício 2 - Massa Radioativa
+
+
+
+Um determinado material radioativo perde metade de sua massa a cada 50 segundos.
+    Dada a massa inicial em gramas, faça um programa em C que calcule o tempo 
+necessário para que essa massa se torne menor que 0,5 grama. O programa deve imprimir a massa inicial,
+a massa final e o tempo calculado em horas, minutos e segundos
+
+
+#include <stdio.h>
+
+int main() {
+    float massaInicial;
+    float massa;
+
+    int tempo = 0;
+    int horas;
+    int minutos;
+    int segundos;
+
+    printf("Digite a massa inicial em gramas: ");
+    scanf("%f", &massaInicial);
+
+    massa = massaInicial;
+
+    while (massa >= 0.5) {
+        massa = massa / 2;
+        tempo = tempo + 50;
+    }
+
+    horas = tempo / 3600;
+    minutos = (tempo % 3600) / 60;
+    segundos = tempo % 60;
+
+    printf("\nMassa inicial: %.2f gramas\n", massaInicial);
+    printf("Massa final: %.4f gramas\n", massa);
+    printf("Tempo: %d horas, %d minutos e %d segundos\n",
+           horas, minutos, segundos);
+
+    return 0;
+}
+
+
+Exercício 3 - Registro de passageiros
+
+
+
+Uma empresa de ônibus deseja registrar a quantidade de passageiros transportados em 6 viagens.
+
+Elabore um programa que leia a quantidade de passageiros de cada viagem e armazene os valores em um vetor.
+
+O programa deverá:
+
+1.Calcular o total de passageiros.
+2.Identificar a viagem com maior número de passageiros.
+3.Contar quantas viagens transportaram mais de 30 passageiros.
+    
+Requisitos: utilize um vetor de inteiros, laços de repetição e as funções calcularTotal() e contarViagens().
+
+
+    #include <stdio.h>
+
+int calcularTotal(int passageiros[], int tamanho);
+int contarViagens(int passageiros[], int tamanho);
+
+int main() {
+    int passageiros[6];
+    int i;
+    int total;
+    int maior;
+    int viagemMaior;
+    int contador;
+
+    
+    for (i = 0; i < 6; i++) {
+        printf("Passageiros da viagem %d: ", i + 1);
+        scanf("%d", &passageiros[i]);
+    }
+
+    
+    total = calcularTotal(passageiros, 6);
+    contador = contarViagens(passageiros, 6);
+
+    
+    maior = passageiros[0];
+    viagemMaior = 1;
+
+    for (i = 1; i < 6; i++) {
+        if (passageiros[i] > maior) {
+            maior = passageiros[i];
+            viagemMaior = i + 1;
+        }
+    }
+
+    
+    printf("\nTotal de passageiros: %d\n", total);
+    printf("Viagem com mais passageiros: %d\n", viagemMaior);
+    printf("Maior quantidade de passageiros: %d\n", maior);
+    printf("Viagens com mais de 30 passageiros: %d\n", contador);
+
+    return 0;
+}
+
+
+int calcularTotal(int passageiros[], int tamanho) {
+    int soma = 0;
+    int i;
+
+    for (i = 0; i < tamanho; i++) {
+        soma = soma + passageiros[i];
+    }
+
+    return soma;
+}
+
+
+int contarViagens(int passageiros[], int tamanho) {
+    int contador = 0;
+    int i;
+
+    for (i = 0; i < tamanho; i++) {
+        if (passageiros[i] > 30) {
+            contador++;
+        }
+    }
+
+    return contador;
+}
