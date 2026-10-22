@@ -61,3 +61,71 @@ int main() {
     
     return 0;
 }
+
+
+
+------------------------------------------------------------------------------
+Lista de exercícios VIII - Linguagem C
+
+
+
+Exercício 1 — Controle de consumo de energia elétrica
+
+
+
+Uma empresa deseja monitorar o consumo de energia elétrica de uma instalação durante 7 dias. Desenvolva um programa em C que armazene em um vetor o consumo diário, em kWh.
+
+
+
+Ao final, o programa deverá:
+
+- Calcular o consumo total da semana.
+
+- Calcular o consumo médio diário.
+
+- Identificar o dia de maior consumo e seu respectivo valor.
+
+- Contar quantos dias apresentaram consumo superior a 250 kWh.
+
+Requisitos técnicos: utilize um vetor de 7 posições e uma estrutura de repetição para ler os dados e calcular os resultados.
+    #include <stdio.h>
+
+int main() {
+    float consumo[7];
+    float total = 0;
+    float media;
+    float maior;
+
+    int i;
+    int diaMaior;
+    int contador = 0;
+
+    
+    for (i = 0; i < 7; i++) {
+        printf("Digite o consumo do dia %d: ", i + 1);
+        scanf("%f", &consumo[i]);
+
+        total += consumo[i];
+
+        if (i == 0 || consumo[i] > maior) {
+            maior = consumo[i];
+            diaMaior = i + 1;
+        }
+
+        if (consumo[i] > 250) {
+            contador++;
+        }
+    }
+
+    
+    media = total / 7;
+
+    
+    printf("\nConsumo total: %.2f kWh\n", total);
+    printf("Consumo medio: %.2f kWh\n", media);
+    printf("Maior consumo: %.2f kWh\n", maior);
+    printf("Dia de maior consumo: %d\n", diaMaior);
+    printf("Dias acima de 250 kWh: %d\n", contador);
+
+    return 0;
+}
